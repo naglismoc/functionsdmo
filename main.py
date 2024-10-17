@@ -1,3 +1,6 @@
+import random
+
+
 def sayHi():# nieko nepriima, nieko negrazina
     print("hi")
 
@@ -58,3 +61,69 @@ def doSmtNice(a,b):
     sum(a,b) * simPi()
 
 
+
+
+# Sukurkite Funkciją kuri priima du int tipo kintamuosius. Juos susumuoja ir atspausdina.
+def sumInt(a,b):
+    print(a + b)
+sumInt(1, 20)
+# Sukurkite Funkciją kuri vadinasi PISq. Funkcija gražina float tipo reikšmę. Reikšmė yra : 9.8596; Gautą reikšmę atspausdinkite.
+def piSq():
+    return 9.8596
+print(piSq())
+
+# Sukurkite Funkciją kuri priima du int tipo kintamuosius. Funkcija gražina skaičių sandaugą.; Gautą reikšmę atspausdinkite.
+def multiply(a,b):
+    return a * b
+print(multiply(4,10))
+
+# Sukurkite Funkciją kuri priima masyvą, prasuka ciklą ir atspausdina kiekvieną narį vienoje eilutėje.
+def printArr(arr):
+    line = ""
+    for i in arr:
+        line += str(i) + ", "
+    print(line[:-2] + ";")
+printArr([1,4,10])
+# Sukurkite Funkciją kuri priima du int tipo kintamuosius, min ir max reikšmėms nustatyti ir sugeneruoja random int skaičių ir jį gražintų.
+
+def rndNum(min, max):
+    return random.randint(min,max)
+
+#6. Sukurkite Funkciją kuri sugeneruotų random int skaičių masyvą ir jį gražintų. Funkcija priima tris int tipo
+# kintamuosius, min, max ir length reikšmėms nustatyti.
+def rndNumArr(min,max, length):
+    arr = []
+    for i in range(length):
+        arr.append(rndNum(min, max))
+    return arr
+rndArr = rndNumArr(1,10,4)
+printArr(rndArr)
+# Sukurkite Funkciją kuri panaudotų 6toje užduotyje sugeneruotą masyvą (priimtų kaip kintamąjį), susumuotų ir gražintų reikšmę.
+def sumNumArr(arr):
+    sum = 0
+    for i in arr:
+        sum += i
+    return sum
+print(sumNumArr(rndArr))
+# Sukurkite Funkciją kuri priimtų 6toje užduotyje sugeneruotą masyvą ir gražintų jos skaičių vidurkį (double).
+def avgNumArr(arr):
+    return sumNumArr(arr) / len(arr)
+print(avgNumArr(rndArr))
+# Sukurkite Funkciją kuri priimtų du int skaičius ir atspausdintų stačiakampį užpildytą žvaigždutėmis. Pirmas int - išoriniam ciklui, antras vidiniam.
+
+# Sukurkite Funkciją kuri priimtų sakinį kaip kintamąjį ir atspausdintų kiek jame yra raidžių(simbolių) ir tarpų. Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį)
+def countStrSymbols(str):
+   print(f'simboliu yra { len(str.replace(" ", ""))}, tarpu yra {len(str) - len(str.replace(" ", ""))}')
+
+countStrSymbols("labas rytas")
+countStrSymbols("Šiandien labai graži diena")
+
+# Sukurkite Funkciją kuri priimtų sakinį, jį užkoduotų ir grąžintų. Kodavimas - sakinį apsukame iš kitos pusės. Pvz “Naglis” turi gautis “silgaN”
+
+def ultraSmartTextCodingSystem(str):
+    # return str[::-1]
+    text = "" #sabal
+    for i in str:
+        text = i + text
+    return text
+print(ultraSmartTextCodingSystem("labas"))
