@@ -127,3 +127,14 @@ def ultraSmartTextCodingSystem(str):
         text = i + text
     return text
 print(ultraSmartTextCodingSystem("labas"))
+
+
+
+def callYourself(times):
+    if times == 0:
+        return
+    callYourself(times -1)
+    print(f"labas {times}")
+
+callYourself(5)
+
